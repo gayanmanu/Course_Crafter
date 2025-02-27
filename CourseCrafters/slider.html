@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div style="width:100%; height: 1200px; margin-bottom: 2%;">
+
+        <!-- Slider container -->
+        <div id="slider-container" style="width: 100%; height: 100%;margin: auto; overflow: hidden; position: relative; background-color: rgba(255, 255, 255, 0.7); ">
+    
+            <!-- Slides -->
+            <div id="slider" style="display: flex; width: 700%; height: 100%; transition: transform 1s ease-in-out; ">
+    
+                <div style="width: 100%; position: relative;">
+                    <img src="Untitled-4.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+    
+                <div style="width: 100%; position: relative;">
+                    <img src="Untitled-4.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+    
+    
+                <div style="width: 100%; position: relative;">
+                    <img src="Untitled-4.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+    
+    
+                <div style="width: 100%; position: relative;">
+                    <img src="Untitled-4.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+    
+    
+                <div style="width: 100%; position: relative;">
+                    <img src="Untitled-4.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="width: 100%; position: relative;">
+                    <img src="Untitled-4.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+    
+    
+                <div style="width: 100%; position: relative;">
+                    <img src="Untitled-4.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+    
+                <!-- Repeat similar structure for other slides -->
+    
+            </div>
+    
+            <!-- Navigation buttons -->
+            <a class="navigation-button prev-button" onclick="changeSlide(-1)" style="cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -30px; padding: 16px; color: white; font-weight: bold; font-size: 20px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; left: 0;">&#10094;</a>
+            <a class="navigation-button next-button" onclick="changeSlide(1)" style="cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -30px; padding: 16px; color: white; font-weight: bold; font-size: 20px; transition: 0.6s ease; border-radius: 3px 0 0 3px; user-select: none; right: 0;">&#10095;</a>
+        </div>
+    
+        <script>
+            var currentSlide = 0;
+            showSlide(currentSlide);
+    
+            // Autoplay function
+            var autoplayInterval;
+    
+            function startAutoplay() {
+                autoplayInterval = setInterval(function() {
+                    changeSlide(1);
+                }, 3000); // Change slide every 3 seconds (adjust as needed)
+            }
+    
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+    
+            function changeSlide(n) {
+                showSlide(currentSlide += n);
+            }
+    
+            function showSlide(n) {
+                var slider = document.getElementById('slider');
+                var totalSlides = 7;
+    
+                if (currentSlide >= totalSlides) {
+                    // Change this line to move forward and go to the first image
+                    currentSlide = 0;
+                } else if (currentSlide < 0) {
+                    currentSlide = totalSlides - 1;
+                }
+    
+                slider.style.transition = "transform 1s ease-in-out"; // Apply transition
+                slider.style.transform = 'translateX(' + (-currentSlide * 100 / totalSlides) + '%)';
+            }
+    
+            // Start autoplay when the page loads
+            startAutoplay();
+    
+            // Stop autoplay when the user interacts with the slider
+            document.getElementById('slider-container').addEventListener('click', stopAutoplay);
+        </script>
+    
+        </div>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
